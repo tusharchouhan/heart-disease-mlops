@@ -1,0 +1,14 @@
+# .gitignore
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+mlruns/
+*.pkl
+*.joblib
+.DS_Store
+*.egg-info/
+dist/
+build/
+.pytest_cache/
