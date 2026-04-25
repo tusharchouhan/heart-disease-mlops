@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: heart-disease-api
+    runtime: python
+    buildCommand: |
+      pip install -r requirements.txt
+      pip install -e .
+      python src/data/download_data.py
+      python src/models/train_mlflow.py
+    startCommand: uvicorn src.api.app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
