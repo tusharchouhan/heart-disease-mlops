@@ -1,0 +1,2 @@
+2026-04-25 18:12:09,580 - src.api.app - INFO - Model and preprocessor loaded successfully.
+2026-04-25 18:33:53,065 - src.api.app - INFO - Prediction: No Heart Disease | Confidence: 0.1054 | Risk: Low Risk | Latency: 0.0015s | Input: {'age': 54.0, 'sex': 1, 'cp': 2, 'trestbps': 120.0, 'chol': 250.0, 'fbs': 0, 'restecg': 1, 'thalach': 170.0, 'exang': 0, 'oldpeak': 2.0, 'slope': 1, 'ca': 0, 'thal': 3}
