@@ -147,7 +147,7 @@ def train_and_evaluate_all():
         print(f"  CV Accuracy:    {cv_results['cv_accuracy_mean']:.4f} ± {cv_results['cv_accuracy_std']:.4f}")
         
         # Classification Report
-        print(f"\n  Classification Report:")
+        print("\n  Classification Report:")
         print(classification_report(y_test, y_pred, target_names=['No Disease', 'Disease']))
         
         # Save confusion matrix
@@ -180,7 +180,7 @@ def train_and_evaluate_all():
     print(f"\n🏆 Best Model: {best_model_name} (ROC-AUC: {best_score:.4f})")
     os.makedirs("models", exist_ok=True)
     joblib.dump(best_model, "models/best_model.joblib")
-    print(f"Best model saved to models/best_model.joblib")
+    print("Best model saved to models/best_model.joblib")
     
     return best_model, best_model_name, results_df, preprocessor
 

@@ -159,7 +159,7 @@ def train_with_mlflow():
     # Save best model
     os.makedirs("models", exist_ok=True)
     joblib.dump(best_model, "models/best_model.joblib")
-    print(f"\nBest model saved to models/best_model.joblib")
+    print("\nBest model saved to models/best_model.joblib")
     
     # Save results
     results_df.to_csv("models/experiment_results.csv", index=False)

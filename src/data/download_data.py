@@ -33,5 +33,6 @@ def download_heart_disease_data(output_path="data/heart.csv"):
     
     return df
 
+
 if __name__ == "__main__":
     download_heart_disease_data()
