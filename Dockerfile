@@ -18,15 +18,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY src/ ./src/
-COPY models/ ./models/
-COPY data/ ./data/
-COPY conftest.py .
-COPY setup.py .
+# Copy ALL application code
+COPY . .
 
 # Install package
 RUN pip install -e .
+
+# Download data and train model during build
+RUN python src/data/download_data.py
+RUN python src/models/train_mlflow.py
 
 # Create log directory
 RUN mkdir -p /app/logs
