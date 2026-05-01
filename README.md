@@ -3,7 +3,7 @@ MLOPS Assignment
 ## Cloud Deployment
 
 **Platform:** Google Cloud Run
-**URL:** https://heart-disease-api-xxxxxxxxxx-uc.a.run.app
+**URL:** https://heart-disease-mlops-951222900001.us-central1.run.app
 **Region:** us-central1
 **Continuous Deployment:** Enabled (auto-deploys on git push to main)
 
