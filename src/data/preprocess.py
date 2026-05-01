@@ -16,15 +16,15 @@ import os
 def load_and_clean_data(filepath="data/heart.csv"):
     """Load and clean the heart disease dataset."""
     df = pd.read_csv(filepath)
-    
+
     # Handle missing values
     for col in df.columns:
         if df[col].isnull().sum() > 0:
             if df[col].dtype in ['float64', 'int64']:
-                df[col].fillna(df[col].median(), inplace=True)
+                df[col] = df[col].fillna(df[col].median())
             else:
-                df[col].fillna(df[col].mode()[0], inplace=True)
-    
+                df[col] = df[col].fillna(df[col].mode()[0])
+
     return df
 
 
@@ -38,15 +38,15 @@ def get_feature_lists():
 def build_preprocessor():
     """Build a sklearn preprocessing pipeline."""
     numerical_features, categorical_features = get_feature_lists()
-    
+
     preprocessor = ColumnTransformer(
         transformers=[
             ('num', StandardScaler(), numerical_features),
-            ('cat', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'), 
+            ('cat', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'),
              categorical_features)
         ]
     )
-    
+
     return preprocessor
 
 
@@ -56,22 +56,22 @@ def prepare_data(filepath="data/heart.csv", test_size=0.2, random_state=42):
     Returns X_train, X_test, y_train, y_test, preprocessor
     """
     df = load_and_clean_data(filepath)
-    
+
     numerical_features, categorical_features = get_feature_lists()
     all_features = numerical_features + categorical_features
-    
+
     X = df[all_features]
     y = df['target']
-    
+
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=test_size, random_state=random_state, stratify=y
     )
-    
+
     preprocessor = build_preprocessor()
-    
+
     X_train_processed = preprocessor.fit_transform(X_train)
     X_test_processed = preprocessor.transform(X_test)
-    
+
     return X_train_processed, X_test_processed, y_train, y_test, preprocessor
 
 
