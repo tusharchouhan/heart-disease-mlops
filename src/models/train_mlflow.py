@@ -34,6 +34,9 @@ def train_with_mlflow():
     os.makedirs("models", exist_ok=True)
     os.makedirs("data", exist_ok=True)
 
+    # Use SQLite backend for reliability
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
+
     # Set MLflow experiment
     mlflow.set_experiment("heart-disease-classification")
 
@@ -147,7 +150,7 @@ def train_with_mlflow():
                 print(f"  Warning: Could not save ROC curve: {e}")
                 plt.close('all')
 
-            # Log classification report as text artifact
+            # Log classification report
             try:
                 report = classification_report(y_test, y_pred, target_names=['No Disease', 'Disease'])
                 report_path = os.path.join("screenshots", f"report_{name}.txt")
@@ -190,5 +193,6 @@ def train_with_mlflow():
 
 if __name__ == "__main__":
     best_model, results_df = train_with_mlflow()
-    print("\nTo view MLflow UI, run: mlflow ui")
-    print("Then open http://localhost:5000 in your browser")
+    print("\nTo view MLflow UI, run:")
+    print("  mlflow ui --backend-store-uri sqlite:///mlflow.db")
+    print("Then open http://127.0.0.1:5000 in your browser")
