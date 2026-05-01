@@ -3,10 +3,7 @@ __pycache__/
 *.pyc
 .git/
 mlruns/
-notebooks/
-tests/
+.pytest_cache/
+*.egg-info/
 screenshots/
 .github/
-*.md
-.gitignore
-.dockerignore
