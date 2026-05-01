@@ -5,10 +5,9 @@ __pycache__/
 .env
 venv/
 mlruns/
-*.pkl
-*.joblib
 .DS_Store
 *.egg-info/
 dist/
 build/
 .pytest_cache/
+api.log
