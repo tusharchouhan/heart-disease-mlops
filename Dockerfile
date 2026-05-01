@@ -1,4 +1,4 @@
-# Dockerfile for Heart Disease Prediction API
+# Dockerfile for Heart Disease Prediction API - GCP Cloud Run
 FROM python:3.11-slim
 
 # Set working directory
@@ -7,6 +7,7 @@ WORKDIR /app
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PORT=8080
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -24,15 +25,14 @@ COPY data/ ./data/
 COPY conftest.py .
 COPY setup.py .
 
+# Install package
+RUN pip install -e .
+
 # Create log directory
 RUN mkdir -p /app/logs
 
 # Expose port
-EXPOSE 8000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8000/health')" || exit 1
+EXPOSE 8080
 
 # Run the application
-CMD ["uvicorn", "src.api.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD exec uvicorn src.api.app:app --host 0.0.0.0 --port ${PORT:-8080}
