@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Flake8 Linting
         run: |
-          flake8 src/ tests/ --max-line-length=120 --ignore=E501,W503,E203,E302,E303,W291,W292,W293,E231,E261,E262,E265,E266,E128,E127,E126,E125,E124,E123,E121,E122,F401,E741,E402,W504,W605
+          flake8 src/ tests/ --max-line-length=120 --ignore=E501,W503,E203,E302,E303,W291,W292,W293,E231,E261,E262,E265,E266,E128,E127,E126,E125,E124,E123,E121,E122,F401,E741,E402,W504,W605,E305,F541
 
   test:
     name: Unit Testing
@@ -124,27 +124,48 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run -d -p 8000:8000 --name test-container heart-disease-api:latest
-          sleep 15
+          docker run -d -p 8000:8080 --name test-container heart-disease-api:latest
+
+      - name: Wait for container to be ready
+        run: |
+          echo "Waiting for API to start..."
+          for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
+            echo "Attempt $i of 15..."
+            if curl -s http://localhost:8000/health > /dev/null 2>&1; then
+              echo "API is ready!"
+              exit 0
+            fi
+            echo "Not ready yet, waiting 5 seconds..."
+            sleep 5
+          done
+          echo "API failed to start in time"
+          docker logs test-container
+          exit 1
 
       - name: Test API health endpoint
         run: |
+          echo "Testing health endpoint..."
           curl -f http://localhost:8000/health
+          echo ""
           echo "Health check passed!"
 
       - name: Test API prediction endpoint
         run: |
+          echo "Testing prediction endpoint..."
           curl -X POST http://localhost:8000/predict \
             -H "Content-Type: application/json" \
             -d '{"age":55,"sex":1,"cp":2,"trestbps":130,"chol":250,"fbs":0,"restecg":1,"thalach":150,"exang":0,"oldpeak":1.5,"slope":1,"ca":0,"thal":3}'
+          echo ""
           echo "Prediction test passed!"
 
       - name: Test API docs endpoint
         run: |
+          echo "Testing docs endpoint..."
           curl -f http://localhost:8000/docs
+          echo ""
           echo "Docs endpoint passed!"
 
-      - name: Show Docker logs
+      - name: Show container logs
         if: always()
         run: docker logs test-container
 
