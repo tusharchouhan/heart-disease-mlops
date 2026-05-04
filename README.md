@@ -245,18 +245,19 @@ Google Cloud Run with:
 
 ## 👤 Author
 
-**Tushar Chouhan**  
-Course: MLOps (S2-25_AMLCSZG523)  
-GitHub: [![tusharchouhan](https://github.com/tusharchouhan)  
-Repository: [![heart-disease-mlops](https://github.com/tusharchouhan/heart-disease-mlops)
+**Tushar Chouhan**
+
+- 📧 Course: MLOps (S2-25_AMLCSZG523)
+- 🔗 GitHub: [tusharchouhan](https://github.com/tusharchouhan)
+- 📦 Repository: [heart-disease-mlops](https://github.com/tusharchouhan/heart-disease-mlops)
 
 ---
 
-##  Acknowledgments
+## 🙏 Acknowledgments
 
-- UCI Machine Learning Repository
-- Scikit-learn
-- FastAPI
-- MLflow
-- Docker
-- Google Cloud
+- [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/) for the Heart Disease dataset
+- [Scikit-learn](https://scikit-learn.org/) for ML algorithms
+- [FastAPI](https://fastapi.tiangolo.com/) for the API framework
+- [MLflow](https://mlflow.org/) for experiment tracking
+- [Docker](https://www.docker.com/) for containerization
+- [Google Cloud](https://cloud.google.com/) for cloud deployment
