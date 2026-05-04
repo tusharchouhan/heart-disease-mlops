@@ -247,8 +247,8 @@ Google Cloud Run with:
 
 **Tushar Chouhan**  
 Course: MLOps (S2-25_AMLCSZG523)  
-GitHub: tusharchouhan  
-Repository: heart-disease-mlops
+GitHub: [![tusharchouhan](https://github.com/tusharchouhan)  
+Repository: [![heart-disease-mlops](https://github.com/tusharchouhan/heart-disease-mlops)
 
 ---
 
