@@ -128,7 +128,22 @@ Selected based on highest ROC-AUC and stable cross-validation.
 
 ## 🛠 Tech Stack
 
-Python, Scikit-learn, FastAPI, MLflow, Pandas, NumPy, Pytest, Docker, GitHub Actions, Google Cloud Run, Prometheus
+| Component | Technology | Version |
+|-----------|-----------|---------|
+| Language | Python | 3.11 |
+| ML Framework | Scikit-learn | 1.5.2 |
+| API | FastAPI | 0.115.6 |
+| Server | Uvicorn | 0.34.0 |
+| Experiment Tracking | MLflow | 2.19.0 |
+| Data Processing | Pandas | 2.2.3 |
+| Numerical Computing | NumPy | 2.1.3 |
+| Visualization | Matplotlib, Seaborn | 3.9.3, 0.13.2 |
+| Testing | Pytest | 8.3.4 |
+| Linting | Flake8 | 7.1.1 |
+| Containerization | Docker | Latest |
+| CI/CD | GitHub Actions | v4 |
+| Cloud | Google Cloud Run | Latest |
+| Monitoring | Prometheus Client | 0.21.1 |
 
 ---
 
