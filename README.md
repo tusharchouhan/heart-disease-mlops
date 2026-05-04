@@ -59,7 +59,7 @@ Heart disease is one of the leading causes of mortality worldwide. Early detecti
 
 ---
 
-## 🏗 Architecture
+##  Architecture
 
 ```text
 GitHub Repository
@@ -80,7 +80,7 @@ GitHub Repository
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 heart-disease-mlops/
