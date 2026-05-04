@@ -10,7 +10,7 @@ A production-grade, fully automated Machine Learning Operations (MLOps) pipeline
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#-overview)
 - [Architecture](#-architecture)
@@ -31,7 +31,7 @@ A production-grade, fully automated Machine Learning Operations (MLOps) pipeline
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 ### Problem Statement
 
@@ -100,7 +100,7 @@ heart-disease-mlops/
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 **Title:** Heart Disease UCI Dataset  
 **Source:** https://archive.ics.uci.edu/ml/datasets/heart+Disease
@@ -112,7 +112,7 @@ heart-disease-mlops/
 
 ---
 
-## 🏆 Models and Results
+##  Models and Results
 
 | Model | Accuracy | ROC-AUC |
 |-------|----------|---------|
@@ -147,7 +147,7 @@ Selected based on highest ROC-AUC and stable cross-validation.
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 git clone https://github.com/tusharchouhan/heart-disease-mlops.git
@@ -162,7 +162,7 @@ python -m uvicorn src.api.app:app --host 0.0.0.0 --port 8000
 
 ---
 
-## 📡 API Documentation
+##  API Documentation
 
 ### Endpoints
 
@@ -174,7 +174,7 @@ python -m uvicorn src.api.app:app --host 0.0.0.0 --port 8000
 
 ---
 
-## 📊 Experiment Tracking
+##  Experiment Tracking
 
 MLflow tracks:
 - Parameters
@@ -188,7 +188,7 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 ---
 
-## 🔄 CI/CD Pipeline
+##  CI/CD Pipeline
 
 Stages:
 1. Lint
@@ -198,7 +198,7 @@ Stages:
 
 ---
 
-## 🐳 Docker
+##  Docker
 
 ```bash
 docker build -t heart-disease-api:latest .
@@ -216,7 +216,7 @@ Google Cloud Run with:
 
 ---
 
-## 📈 Monitoring
+##  Monitoring
 
 - Prometheus `/metrics`
 - Structured logs
@@ -225,7 +225,7 @@ Google Cloud Run with:
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 - 29 unit tests
 - API tests
@@ -234,7 +234,7 @@ Google Cloud Run with:
 
 ---
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 - Install dependencies: `pip install -e .`
 - Download data before tests
@@ -252,7 +252,7 @@ Repository: heart-disease-mlops
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - UCI Machine Learning Repository
 - Scikit-learn
