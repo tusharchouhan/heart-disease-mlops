@@ -126,7 +126,7 @@ Selected based on highest ROC-AUC and stable cross-validation.
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Component | Technology | Version |
 |-----------|-----------|---------|
@@ -147,7 +147,7 @@ Selected based on highest ROC-AUC and stable cross-validation.
 
 ---
 
-##  Quick Start
+##  Please start from here:
 
 ```bash
 git clone https://github.com/tusharchouhan/heart-disease-mlops.git
@@ -207,7 +207,7 @@ docker run -p 8000:8080 heart-disease-api:latest
 
 ---
 
-## ☁ Cloud Deployment
+##  Cloud Deployment
 
 Google Cloud Run with:
 - Auto-scaling
@@ -243,13 +243,13 @@ Google Cloud Run with:
 
 ---
 
-## 👤 Author
+##  Author
 
 **Tushar Chouhan**
 
-- 📧 Course: MLOps (S2-25_AMLCSZG523)
-- 🔗 GitHub: [tusharchouhan](https://github.com/tusharchouhan)
-- 📦 Repository: [heart-disease-mlops](https://github.com/tusharchouhan/heart-disease-mlops)
+-  Course: MLOps (S2-25_AMLCSZG523)
+-  GitHub: [tusharchouhan](https://github.com/tusharchouhan)
+-  Repository: [heart-disease-mlops](https://github.com/tusharchouhan/heart-disease-mlops)
 
 ---
 
