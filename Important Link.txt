@@ -1,0 +1,9 @@
+Important Links:
+
+1. Github Repo - https://github.com/tusharchouhan/heart-disease-mlops
+
+2. Deployement Link - https://heart-disease-mlops-951222900001.us-central1.run.app/
+
+3. Demo Video - Demo Video Uploaded in Git Repo under folder name Demo Video Link - https://github.com/tusharchouhan/heart-disease-mlops/tree/main/Demo%20Video
+
+4. Report is uploaded on the Bits Taxila portal. 
